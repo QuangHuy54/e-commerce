@@ -23,6 +23,8 @@ config.set_section_option(section, "DB_NAME", env.DB_NAME)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
+url = config.get_main_option("sqlalchemy.url")
+print(f"Connection URL: {url}")
 # add your model's MetaData object here
 # for 'autogenerate' support
 from models.base import Base

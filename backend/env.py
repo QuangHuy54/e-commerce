@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv(".env")
 
 
 class Env(BaseModel):
@@ -19,3 +19,4 @@ class Env(BaseModel):
 
 
 env = Env.model_validate(os.environ)
+print("#####", env)
